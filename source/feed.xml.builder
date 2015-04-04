@@ -1,3 +1,4 @@
+# https://github.com/middleman/middleman-blog/blob/master/lib/middleman-blog/template/source/feed.xml.builder
 xml.instruct!
 xml.feed "xmlns" => "http://www.w3.org/2005/Atom" do
   site_url = "http://www.example.com/"
