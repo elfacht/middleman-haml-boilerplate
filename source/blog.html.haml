@@ -1,0 +1,12 @@
+---
+  title: Blog
+---
+
+%section.row
+  %dl
+    - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
+      %dt.large-4.columns= year
+      %dd.large-8.columns
+        %ul
+          - articles.each do |article|
+            %li= link_to article.title, article.url

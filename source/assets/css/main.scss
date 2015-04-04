@@ -1,0 +1,25 @@
+/**
+ * MAIN INCLUDES
+ */
+
+
+// global helpers
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/colors";
+@import "helpers/zindex";
+@import "helpers/placeholder";
+
+// vendor
+@import "vendor/foundation";
+
+// base
+@import "base/utility";
+@import "base/fonts";
+@import "base/icons";
+
+// layout
+@import "layout/base";
+@import "layout/grid";
+@import "layout/main";
+

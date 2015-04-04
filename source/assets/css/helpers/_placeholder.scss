@@ -1,0 +1,16 @@
+/**
+ * PLACEHOLDER
+ */
+
+
+
+// transition
+%transition {
+  @include transition($base-transition);
+}
+
+// unstyled list
+%unstyled-list {
+  list-style: none;
+  padding: 0;
+}
