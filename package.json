@@ -21,5 +21,8 @@
     "grunt-newer": "^1.1.0",
     "matchdep": "^0.3.0"
   },
+  "scripts": {
+    "test": "grunt --verbose"
+  },
   "private": true
 }
