@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/elfacht/middleman-haml-boilerplate.svg)](https://travis-ci.org/elfacht/middleman-haml-boilerplate)
+
 # Middleman Haml Boilerplate
 
 Project template for Middleman with SCSS, Grunt, RSS-Feed and basic blog setup.
