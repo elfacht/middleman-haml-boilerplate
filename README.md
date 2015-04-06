@@ -17,3 +17,6 @@ Project template for Middleman with SCSS, Grunt, RSS-Feed and basic blog setup.
 * [matchdep](https://www.npmjs.com/package/matchdep)
 * VanillaJS
 * SCSS
+
+## License
+Copyright (c) 2015 Martin Szymanski. MIT Licensed, see [LICENSE] for details.
