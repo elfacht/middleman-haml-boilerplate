@@ -1,11 +1,14 @@
 !!! 5
-%html(lang="en" class="no-js")
+%html(lang="en" class="no-js" itemscope itemtype="https://schema.org/Article" dir="ltr")
   %head
     %meta{charset: "utf-8"}
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
     %title= render_page_title(data.page.title, current_resource.url)
+    = display_meta_tags description: 'This example site is an example'
+    = display_meta_tags viewport: 'width=device-width,initial-scale=1'
+    = display_meta_tags keywords: 'example site, some other stuff that might be important'
 
     = stylesheet_link_tag 'main'
 

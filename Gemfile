@@ -5,6 +5,13 @@ source 'https://rubygems.org'
 gem "middleman", "~>3.3.10"
 gem "middleman-blog"
 gem 'builder', '~> 2.0'
+gem 'middleman-minify-html'
+gem 'middleman-autoprefixer'
+gem 'middleman-inliner'
+gem 'middleman-meta-tags'
+gem "middleman-piwik"
+gem 'middleman-title'
+gem 'middleman-imageoptim'
 
 # Live-reloading plugin
 gem "middleman-livereload", "~> 3.1.0"
