@@ -109,10 +109,25 @@ set :images_dir, 'assets/img'
 # Vanity URLs
 activate :directory_indexes
 
-set :url_root, 'http://www.elfacht.com'
+# Meta tags
+# Source: https://github.com/tiste/middleman-meta-tags
+activate :meta_tags
+
+# Set URL root
+set :url_root, 'http://www.example.com'
+
+# Autoprefixer settings
+# Source: https://github.com/middleman/middleman-autoprefixer
+activate :autoprefixer do |config|
+  config.browsers = ['last 2 versions', 'Explorer >= 9']
+  config.cascade  = false
+  config.inline   = true
+  config.ignore   = ['hacks.css']
+end
 
 # Build-specific configuration
 configure :build do
+
   # Exclude any vendor components (bower or custom builds) in the build
   ignore 'assets/css/settings/*'
   ignore 'assets/css/partials/*'
@@ -120,6 +135,9 @@ configure :build do
   ignore 'assets/css/vendor/*'
   ignore 'assets/js/vendor/*'
 
+  # Gzip build
+  # More info: https://middlemanapp.com/advanced/file_size_optimization/
+  activate :gzip
 
   # For example, change the Compass output style for deployment
   activate :minify_css
@@ -127,8 +145,33 @@ configure :build do
   # Minify Javascript on build
   activate :minify_javascript
 
+  # Minifiy HTML
+  # Source: https://github.com/middleman/middleman-minify-html
+  activate :minify_html do |html|
+    #html.remove_multi_spaces        = true   # Remove multiple spaces
+    html.remove_comments            = true   # Remove comments
+    html.remove_intertag_spaces     = true  # Remove inter-tag spaces
+    html.remove_quotes              = false   # Remove quotes
+    #html.simple_doctype             = false  # Use simple doctype
+    #html.remove_script_attributes   = true   # Remove script attributes
+    #html.remove_style_attributes    = true   # Remove style attributes
+    #html.remove_link_attributes     = true   # Remove link attributes
+    #html.remove_form_attributes     = false  # Remove form attributes
+    #html.remove_input_attributes    = true   # Remove input attributes
+    #html.remove_javascript_protocol = true   # Remove JS protocol
+    #html.remove_http_protocol       = true   # Remove HTTP protocol
+    #html.remove_https_protocol      = false  # Remove HTTPS protocol
+    #html.preserve_line_breaks       = false  # Preserve line breaks
+    #html.simple_boolean_attributes  = true   # Use simple boolean attributes
+    #html.preserve_patterns          = nil    # Patterns to preserve
+  end
+
+  # Imageoptim
+  # Source: https://github.com/plasticine/middleman-imageoptim
+  activate :imageoptim
+
   # Enable cache buster
-  #activate :asset_hash
+  activate :asset_hash
 
   # Use relative URLs
   activate :relative_assets
