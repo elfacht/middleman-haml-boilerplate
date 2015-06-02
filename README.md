@@ -19,4 +19,4 @@ Project template for Middleman with SCSS, Grunt, RSS-Feed and basic blog setup.
 * SCSS
 
 ## License
-Copyright (c) 2015 Martin Szymanski. MIT Licensed, see [LICENSE](LICENSE.md) for details.
+MIT Licensed, see [LICENSE](LICENSE.md) for details.
