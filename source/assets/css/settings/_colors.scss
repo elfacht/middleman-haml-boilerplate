@@ -1,0 +1,63 @@
+////
+/// Colors
+/// @group colors
+///
+////
+
+
+/// The main brand color (mountain-meadow)
+$color-brand:             #1bbc9b;
+//$color-brand: #c69c6e;
+
+/// The main monochrome colors. Use only in palette)
+$color-black: black;
+$color-white: white;
+
+/// UI colors map for the main theme
+///
+/// @example
+///   .element {
+///     color: palette(ui, 'brand');
+///   }
+$palettes: (
+  ui: (
+    'brand':            $color-brand,
+    'brand-dark':       mix($color-black, $color-brand, 20%),
+    'white':            $color-white,
+    'offwhite':         #f7f7f7,
+    'gray-lightest':    #eee,
+    'gray-lighter':     #d5d5d5,
+    'gray-light':       #b5b5b5,
+    'gray':             gray,
+    'gray-dark':        #555,
+    'gray-darker':      #333,
+    'black':            black
+  ),
+  vendor: (
+    'facebook':   #3b5998,
+    'twitter':    #4099ff,
+    'gplus':      #c63d2d,
+    'pinterest':  #c92228,
+    'reddit':     #cee2fa,
+    'bloglovin':  #479aff,
+    'instagram':  #04558c,
+    'untappd':    #fdcd0a,
+    'rss':        #ffae00
+  )
+);
+
+/// Function to parse color palettes
+@function palette($palette, $tone: 'brand') {
+  @return map-get(map-get($palettes, $palette), $tone);
+}
+
+
+
+/// The base text color
+$base-text-color:         palette(ui, 'gray-darker');
+
+/// The base text color, but a bit lighter
+$base-text-color-light:   palette(ui, 'gray');
+
+/// The body background color
+$base-background:         palette(ui, 'gray-lightest');

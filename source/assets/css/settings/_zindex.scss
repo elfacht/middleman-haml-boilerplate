@@ -1,0 +1,9 @@
+/// Hierarchal z-index stack to avoid inflational numbers.
+///
+/// @group layout
+///
+/// @example
+///   .element {
+///     z-index: index($elements, footer)
+///   }
+$elements: footer, posts, navigation;

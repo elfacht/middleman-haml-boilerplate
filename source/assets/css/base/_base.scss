@@ -1,0 +1,169 @@
+// BASE CSS ELEMENT STYLES
+
+
+// =Basics
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+
+body {
+  background-color: $base-background;
+  color: $base-text-color;
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+  line-height: $base-line-height;
+  margin: 0;
+  min-height: 100%;
+  overflow-x: hidden;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+
+  &:before {
+    content: 'small';
+    display: none;
+
+    //--- medium
+    @include media-breakpoint-up(md) {
+      content: 'medium';
+    }
+
+    //--- large
+    @include media-breakpoint-up(lg) {
+      content: 'large';
+    }
+  }
+
+  &.disable-hover {
+    pointer-events: none;
+  }
+}
+
+
+::-moz-selection {
+  background: $base-selection-background;
+  color: $base-selection-color;
+  text-shadow: none;
+}
+
+::selection {
+  background: $base-selection-background;
+  color: $base-selection-color;
+  text-shadow: none;
+}
+
+
+// =Images
+svg {
+  @include prefix(transition, $base-transition, ('webkit'));
+}
+
+
+figure {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  -ms-interpolation-mode: bicubic;
+}
+
+// =Typo
+small {
+  font-size: $base-small-font-size;
+}
+
+
+// =Links
+a:not(img) {
+  @include prefix(transition, $base-transition, ('webkit'));
+  color: $base-link-color;
+  text-decoration: none;
+}
+
+a img,
+a > svg {
+  border: none;
+}
+
+// =Blockquote
+blockquote {
+  @include responsive-font(2.8vw, font(size, 'm'), font(size, 'xxl'), font(size, 'xl'));
+  color: $base-text-color;
+  font-family: $base-blockquote-font-family;
+  font-weight: $base-blockquote-font-weight;
+  font-style: $base-blockquote-font-style;
+  line-height: $base-blockquote-line-height;
+  margin: 0 $gutter 0 ($gutter * 1.4);
+  position: relative;
+
+  &::before {
+    color: palette(ui, 'gray');
+    content: '\201C';
+    font-size: $base-blockquote-pseudo-font-size;
+    font-weight: $base-blockquote-pseudo-font-weight;
+    font-style: $base-blockquote-pseudo-font-style;
+    left: -$gutter/2;
+    line-height: $base-blockquote-pseudo-line-height;
+    position: absolute;
+  }
+
+  small {
+    display: block;
+    text-align: right;
+
+    &:before {
+      content: $base-blockquote-pseudo-content;
+    }
+
+    a {
+      color: $base-blockquote-link-color;
+
+      &:hover,
+      &:active {
+        color: $base-blockquote-link-color-hover;
+      }
+    }
+  }
+
+  @include breakpoint(medium) {
+    margin: 0 $gutter 0 0;
+  }
+}
+
+// =Horizontal rule
+hr {
+  border: none;
+  border-top: $base-hr-border;
+  margin: $gutter-px 0;
+
+  &.dashed {
+    border-top: $base-hr-border-dashed;
+  }
+}
+
+

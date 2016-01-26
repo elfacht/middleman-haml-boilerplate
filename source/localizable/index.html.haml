@@ -1,0 +1,21 @@
+---
+  title: Home
+---
+
+-# Define strings by language
+- @strings = data.strings.find{|s| s['lang'] == I18n.locale.to_s}
+
+- @page_title = @strings.title_index
+
+%header
+  .inner
+    %h1
+      = data.global.title
+
+    %h2
+      = @strings.claim
+
+%section
+  %article
+    = @strings.example_content
+

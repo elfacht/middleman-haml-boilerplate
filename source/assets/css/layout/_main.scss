@@ -1,3 +1,20 @@
-/**
- * MAIN SCAFFOLD
- */
+/// Main layout styles
+
+
+// Bottom footer
+main {
+  @include make-container();
+  max-width: 60em;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  width: 100%;
+
+  &::after {
+    content: '\00a0'; /* &nbsp; */
+    display: block;
+    height: 0px;
+    visibility: hidden;
+  }
+}

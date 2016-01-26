@@ -1,0 +1,14 @@
+---
+  title: Nichts gefunden
+  body_classes: not-found
+  hide_from_sitemap: true
+---
+
+- @strings = data.strings.find{|s| s['lang'] == I18n.locale.to_s}
+- @page_title = @strings.title_notfound
+
+
+
+
+
+

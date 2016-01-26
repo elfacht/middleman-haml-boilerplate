@@ -1,23 +1,37 @@
+-# Define strings by language
+- @strings = data.strings.find{|s| s['lang'] == I18n.locale.to_s}
+
 !!! 5
-%html(lang="en" class="no-js" itemscope itemtype="https://schema.org/Article" dir="ltr")
+%html(class="no-js" itemscope itemtype="https://schema.org/Article" dir="ltr"){:lang => I18n.locale.to_s}
   %head
     %meta{charset: "utf-8"}
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    %title= render_page_title(data.page.title, current_resource.url)
-    = display_meta_tags description: 'This example site is an example'
+    - if @page_title
+      %title(itemprop="name")= render_page_title(@page_title, current_resource.url)
+    - else
+      %title(itemprop="name")= render_page_title(data.page.title, current_resource.url)
+
     = display_meta_tags viewport: 'width=device-width,initial-scale=1'
-    = display_meta_tags keywords: 'example site, some other stuff that might be important'
+    = display_meta_tags description: @strings.meta_description
+    = display_meta_tags keywords: @strings.meta_keywords
+    = display_meta_tags author: data.global.title
+
+    -# Define hreflang for each language
+    <link rel="alternate" hreflang="de" href="http://www.this-site.de/" />
+
+    -# Avoid sites from indexing by SE
+    - if current_page.path == '404.html'
+      = display_meta_tags robots: 'noindex'
 
     = stylesheet_link_tag 'main'
 
 
   %body{class: current_page.data.body_classes || "page"}
-    %div.site-wrapper
-      = partial "partials/header"
-      %div.site-content
-        = yield
+
+    = partial "partials/header"
+    %main{:role => 'main'}
+      = yield
     = partial "partials/footer"
 
     = javascript_include_tag  "app"

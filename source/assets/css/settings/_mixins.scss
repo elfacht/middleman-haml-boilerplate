@@ -1,0 +1,112 @@
+/// Helper to size an element
+/// @author Hugo Giraudel
+/// @group Layout
+/// @param {Length} $width
+/// @param {Length} $height
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+
+/// Mixin to generate CSS arrows as pseudo-element
+///
+/// @access public
+///
+/// @param {String} $direction - *top, right, bottom, left, top-left, top-right, bottom-left, bottom-right*
+/// @param {String} $color - Color of the arrow (should match with the container background)
+/// @param {Length} $size
+///
+/// @example
+///   .element::before {
+///     @include arrow(top, black, 20px)
+///   }
+@mixin arrow($direction, $color, $size) {
+  @include size(0);
+  display: block;
+
+  @if $direction == 'top' {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+  } @else if $direction == 'right' {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+  } @else if $direction == 'bottom' {
+    border-top: $size solid $color;
+    border-right: $size solid transparent;
+    border-left: $size solid transparent;
+  } @else if $direction == 'left' {
+    border-top: $size solid transparent;
+    border-right: $size solid $color;
+    border-bottom: $size solid transparent;
+  } @else if $direction == 'top-left' {
+    border-top: $size solid $color;
+    border-right: $size solid transparent;
+  } @else if $direction == 'top-right' {
+    border-top: $size solid $color;
+    border-left: $size solid transparent;
+  } @else if $direction == 'bottom-left' {
+    border-bottom: $size solid $color;
+    border-right: $size solid transparent;
+  } @else if $direction == 'bottom-right' {
+    border-bottom: $size solid $color;
+    border-left: $size solid transparent;
+  }
+}
+
+/// Responsive breakpoints for nested values.
+///
+/// @access public
+///
+/// @group Layout
+///
+/// @param {String} $point - Values: small, medium, large, xlarge, xxlarge
+///
+/// @example
+///   .page-wrap {
+///     width: 75%;
+///     @include breakpoint(large) { width: 60%; }
+///     @include breakpoint(medium) { width: 80%; }
+///     @include breakpoint(small) { width: 95%; }
+///   }
+@mixin breakpoint($point) {
+  @if $point == xxlarge {
+    @media (min-width: $breakpoint-xxlarge) { @content; }
+  }
+
+  @if $point == xlarge {
+    @media (min-width: $breakpoint-xlarge) { @content; }
+  }
+
+  @if $point == large {
+    @media (min-width: $breakpoint-large) { @content; }
+  } @else if $point == medium-max {
+    @media (max-width: $breakpoint-medium-max) { @content; }
+  } @else if $point == medium {
+    @media (min-width: $breakpoint-medium) { @content; }
+  } @else if $point == small {
+    @media (min-width: $breakpoint-small)  { @content; }
+  } @else if $point == smallonly {
+    @media (max-width: $breakpoint-small-max)  { @content; }
+  }
+}
+
+//
+
+
+/// Mixin helper to output vendor prefixes
+/// @access public
+/// @author HugoGiraudel
+/// @param {String} $property - Unprefixed CSS property
+/// @param {*} $value - Raw CSS value
+/// @param {List} $prefixes - List of prefixes to output
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    -#{$prefix}-#{$property}: $value;
+  }
+
+  #{$property}: $value;
+}
+

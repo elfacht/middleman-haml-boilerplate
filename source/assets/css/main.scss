@@ -1,25 +1,23 @@
-/**
- * MAIN INCLUDES
- */
-
+/// SCSS includes
 
 // global helpers
-@import "helpers/variables";
-@import "helpers/mixins";
-@import "helpers/colors";
-@import "helpers/zindex";
-@import "helpers/placeholder";
+@import "settings/mixins";
+@import "settings/colors";
+@import 'settings/typography';
+@import "settings/zindex";
+@import "settings/constants";
+
 
 // vendor
-@import "vendor/foundation";
+@import "vendor/bootstrap/bootstrap";
 
 // base
-@import "base/utility";
-@import "base/fonts";
-@import "base/icons";
+@import "base/base";
+
 
 // layout
-@import "layout/base";
-@import "layout/grid";
 @import "layout/main";
+@import "layout/header";
+@import "layout/footer";
+
 

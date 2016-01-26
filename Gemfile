@@ -12,6 +12,7 @@ gem 'middleman-meta-tags'
 gem "middleman-piwik"
 gem 'middleman-title'
 gem 'middleman-imageoptim'
+gem 'middleman-search_engine_sitemap'
 
 # Live-reloading plugin
 gem "middleman-livereload", "~> 3.1.0"

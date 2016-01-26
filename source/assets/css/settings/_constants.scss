@@ -1,0 +1,77 @@
+////
+/// Global constants
+////
+
+
+/// Base px for em calculation
+$em-base: 16px !default;
+
+/// Function to calculate pixel to em.
+///
+/// @require em-base
+/// @group layout
+/// @param {String} $pxWidth - The base pixel value
+///
+/// @return {String}
+///
+/// @example
+///   font-size: emCalc(14px);
+@function emCalc($pxWidth) {
+  @return $pxWidth / $em-base * 1em;
+}
+
+/// Base gutter value, used in almost every class
+/// @group layout
+$gutter:        emCalc(20px);
+
+/// Base gutter px value, used in almost every class
+/// @group layout
+$gutter-px:     20px;
+
+/// Foundation variable to set the global row width
+/// @group layout
+$row-width:     emCalc(1200px);
+
+/// Overrides the Foundation column gutter
+/// @group layout
+$column-gutter: $gutter;
+
+
+/// Breakpoints
+/// @group layout
+$breakpoint-small: 37.5em;
+$breakpoint-small-max: 40em;
+$breakpoint-medium: 40.063em;
+$breakpoint-medium-max: 64em;
+$breakpoint-large: 64.063em;
+$breakpoint-xlarge: 90.063em;
+$breakpoint-xxlarge: 120.063em;
+
+
+
+/// Base transition values for homogenic UX
+$base-transition:       all .12s ease-in-out;
+
+$base-font-family: font(base, 'sans-serif');
+$base-font-weight: font(base, 'regular-weight');
+$base-line-height: font(base, 'line-height');
+$base-small-font-size: 80%;
+$base-link-color: palette(ui, 'black');
+
+$base-blockquote-font-family: font(base, 'serif');
+$base-blockquote-line-height: 1.3;
+$base-blockquote-font-weight: bold;
+$base-blockquote-font-style: italic;
+$base-blockquote-link-color: palette(ui, 'black');
+$base-blockquote-link-color-hover: palette(ui, 'brand');
+$base-blockquote-pseudo-content: '\2013 ';
+$base-blockquote-pseudo-font-size: font(size, 'xxxxxl');
+$base-blockquote-pseudo-font-weight: bold;
+$base-blockquote-pseudo-font-style: normal;
+$base-blockquote-pseudo-line-height: 1;
+
+$base-selection-background: palette(ui, 'brand-dark');
+$base-selection-color: palette(ui, 'white');
+
+$base-hr-border: 1px solid palette(ui, 'gray-lighter');
+$base-hr-border-dashed: 1px dashed palette(ui, 'gray-lighter');

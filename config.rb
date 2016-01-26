@@ -32,6 +32,10 @@
 # Helpers
 ###
 
+# Localization (i18n) - 'de' as default
+activate :i18n, :mount_at_root => :de
+
+
 # Automatic image dimensions on image_tag helper
 activate :automatic_image_sizes
 
@@ -46,7 +50,9 @@ activate :blog do |blog|
   blog.permalink = "blog/{year}/{title}.html"
 end
 
+# Create blog feed XML
 page "/feed.xml", layout: false
+
 
 # Methods defined in the helpers block are available in templates
 helpers do
@@ -134,6 +140,7 @@ configure :build do
   ignore 'assets/css/components/*'
   ignore 'assets/css/vendor/*'
   ignore 'assets/js/vendor/*'
+  ignore 'assets/icons/preview.html' # grunticon generated preview.html
 
   # Gzip build
   # More info: https://middlemanapp.com/advanced/file_size_optimization/
