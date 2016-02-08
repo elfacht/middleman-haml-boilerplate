@@ -57,9 +57,19 @@ page "/feed.xml", layout: false
 # Methods defined in the helpers block are available in templates
 helpers do
 
-  # TODO: Change title
+  # Default site title (also used in feed.xml.builder)
   def site_title
     "Example site"
+  end
+
+  # Default site subtitle (also used in feed.xml.builder)
+  def site_subtitle
+    "Cool site with cool stuff"
+  end
+
+  # Used in feed.xml.builder
+  def blog_author
+    "John Doe"
   end
 
   # Site title settings

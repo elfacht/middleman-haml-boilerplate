@@ -1,12 +1,12 @@
 [![Build Status](https://travis-ci.org/elfacht/middleman-haml-boilerplate.svg)](https://travis-ci.org/elfacht/middleman-haml-boilerplate)
 
-# Middleman Haml Boilerplate
+# Middleman Boilerplate
 
-Project template for Middleman with SCSS, Grunt, RSS-Feed and basic blog setup.
+Project boilerplate for Middleman including blogging, RSS feed, sitemap, imageoptim and Haml.
 
 ## Installation
 
-Install Middleman if you haven't done yet.
+Install [Middleman](https://middlemanapp.com/) if you haven't done yet:
 
 ```console
 $ gem install middleman
@@ -41,11 +41,22 @@ $ bundle exec middleman
 
 Open `http://localhost:4567` in a web browser.
 
+## Gems
+This boilerplate is using following gems:
 
-## Contents
+* [middleman-autoprefixer](https://github.com/middleman/middleman-autoprefixer)
+* [middleman-blog](https://github.com/middleman/middleman-blog)
+* [middleman-imageoptim](https://github.com/plasticine/middleman-imageoptim)
+* [middleman-inliner](https://github.com/kaiinui/middleman-inliner)
+* [middleman-meta-tags](https://github.com/tiste/middleman-meta-tags)
+* [middleman-minify-html](https://github.com/middleman/middleman-minify-html)
+* [middleman-search_engine_sitemap](https://github.com/Aupajo/middleman-search_engine_sitemap)
+* [middleman-title](https://github.com/jcypret/middleman-title)
 
-* [middleman](https://middlemanapp.com/)
-* [Foundation](http://foundation.zurb.com/docs/)
+## Tools
+
+* [Bootstrap v4](http://v4-alpha.getbootstrap.com/)
+* [Foundation](http://foundation.zurb.com/docs/) (deactivated)
 * [Haml](http://haml.info/)
 * [grunt-grunticon](http://www.grunticon.com/)
 * [grunt-bump](https://github.com/vojtajina/grunt-bump)
@@ -53,6 +64,7 @@ Open `http://localhost:4567` in a web browser.
 * [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch)
 * [grunt-newer](https://www.npmjs.com/package/grunt-newer)
 * [matchdep](https://www.npmjs.com/package/matchdep)
+* [imagesloaded.js](https://github.com/desandro/imagesloaded)
 * VanillaJS
 * SCSS
 
