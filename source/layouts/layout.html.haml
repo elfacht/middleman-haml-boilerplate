@@ -18,10 +18,10 @@
     = display_meta_tags author: data.global.title
 
     -# Define hreflang for each language
-    <link rel="alternate" hreflang="de" href="http://www.this-site.de/" />
+    %link{:rel => 'alternate', :hreflang => 'de', :href => url_root}
 
     -# Avoid sites from indexing by SE
-    - if current_page.path == '404.html'
+    - if current_page.data.hide_from_sitemap
       = display_meta_tags robots: 'noindex'
 
     = stylesheet_link_tag 'main'
