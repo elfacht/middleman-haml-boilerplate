@@ -12,18 +12,10 @@ Install [Middleman](https://middlemanapp.com/) if you haven't done yet:
 $ gem install middleman
 ```
 
-### Clone this template to your machine
-
-```console
-$ mkdir ~/.middleman # if it doesn't exist
-$ cd ~/.middleman
-$ git clone https://github.com/elfacht/middleman-haml-boilerplate.git middleman-haml-boilerplate
-```
-
 ### Create middleman blog project
 
 ```console
-$ middleman init my_project --template=middleman-haml-boilerplate
+$ middleman init my_project --template=elfacht/middleman-haml-boilerplate
 ```
 
 ### Install gems
