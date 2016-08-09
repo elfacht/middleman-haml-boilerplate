@@ -1,0 +1,38 @@
+////
+/// Colors
+/// @group colors
+///
+////
+
+/// UI colors map for the main theme
+///
+/// @example
+///   .element {
+///     color: palette(ui, 'brand');
+///   }
+$palettes: (
+  brand: (
+    'primary':             rgba(000, 186, 242, 1),
+    'secondary':           #0fa2d0
+  ),
+  ui: (
+    'black':           #191919,
+    'white':           #FFF,
+    'gray':            #535353,
+    'light':           #FCFCFC,
+  ),
+  vendor: (
+    'facebook':        #3B5998,
+    'twitter':         #4099FF,
+    'gplus':           #C63D2D,
+    'pinterest':       #C92228,
+    'reddit':          #CEE2FA,
+    'instagram':       #04558C,
+    'rss':             #FFAE00
+  )
+);
+
+/// Function to parse color palettes
+@function palette($palette, $tone: 'brand') {
+  @return map-get(map-get($palettes, $palette), $tone);
+}

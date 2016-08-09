@@ -15,7 +15,7 @@ $ gem install middleman
 ### Create middleman blog project
 
 ```console
-$ middleman init my_project --template=elfacht/middleman-haml-boilerplate
+$ middleman init my_project --template=middleman-haml-boilerplate
 ```
 
 ### Install gems
@@ -24,6 +24,14 @@ $ middleman init my_project --template=elfacht/middleman-haml-boilerplate
 $ cd my_project
 $ bundle install
 ```
+
+### Install bower components
+The CSS has already Foundation mixins included. To avoid errors install Foundation via bower:
+
+```console
+bower install
+```
+If you don't want to use Foundation, remove the breakpoint mixin in `base/_base.scss`.
 
 ### Start Middleman server
 
@@ -47,16 +55,8 @@ This boilerplate is using following gems:
 
 ## Tools
 
-* [Bootstrap v4](http://v4-alpha.getbootstrap.com/)
-* [Foundation](http://foundation.zurb.com/docs/) (deactivated)
+* [Foundation 6](http://foundation.zurb.com/docs/) (deactivated)
 * [Haml](http://haml.info/)
-* [grunt-grunticon](http://www.grunticon.com/)
-* [grunt-bump](https://github.com/vojtajina/grunt-bump)
-* [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint)
-* [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch)
-* [grunt-newer](https://www.npmjs.com/package/grunt-newer)
-* [matchdep](https://www.npmjs.com/package/matchdep)
-* [imagesloaded.js](https://github.com/desandro/imagesloaded)
 * VanillaJS
 * SCSS
 

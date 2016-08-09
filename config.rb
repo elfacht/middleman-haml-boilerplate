@@ -123,6 +123,7 @@ end
 set :css_dir, 'assets/css'
 set :js_dir, 'assets/js'
 set :images_dir, 'assets/img'
+set :svg_dir, 'assets/svg'
 
 # Vanity URLs
 activate :directory_indexes
@@ -147,10 +148,10 @@ end
 configure :build do
 
   # Exclude any vendor components (bower or custom builds) in the build
-  ignore 'assets/css/settings/*'
-  ignore 'assets/css/partials/*'
+  ignore 'assets/css/utils/*'
+  ignore 'assets/css/layout/*'
   ignore 'assets/css/components/*'
-  ignore 'assets/css/vendor/*'
+  ignore 'assets/css/modules/*'
   ignore 'assets/js/vendor/*'
   ignore 'assets/icons/preview.html' # grunticon generated preview.html
 

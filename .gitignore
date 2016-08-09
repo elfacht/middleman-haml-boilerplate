@@ -12,6 +12,7 @@
 
 # Ignore node modules
 /node_modules
+/bower_components
 
 # Ignore cache
 /.sass-cache

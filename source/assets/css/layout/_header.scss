@@ -1,14 +1,5 @@
 /// Header styles
 
-body > header {
-  @include make-row();
-  -webkit-box-flex: 0;
-  -webkit-flex: none;
-  -ms-flex: none;
+.header {
   flex: none;
-
-  .inner {
-    @include make-col();
-    @include make-col-span(12);
-  }
 }

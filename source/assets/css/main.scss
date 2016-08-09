@@ -1,23 +1,24 @@
 /// SCSS includes
 
 // global helpers
-@import "settings/mixins";
-@import "settings/colors";
-@import 'settings/typography';
-@import "settings/zindex";
-@import "settings/constants";
+@import "utils/colors";
+@import 'utils/typography';
+@import "utils/zindex";
+@import "utils/constants";
 
-
-// vendor
-@import "vendor/bootstrap/bootstrap";
+@import 'utils/foundation-settings';
+@import "../../../bower_components/foundation-sites/scss/foundation";
 
 // base
 @import "base/base";
 
+// components
+@import "components/button/component_button";
 
 // layout
 @import "layout/main";
 @import "layout/header";
 @import "layout/footer";
 
-
+// modules
+@import "modules/test/module_test";
