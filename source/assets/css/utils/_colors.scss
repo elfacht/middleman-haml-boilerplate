@@ -16,10 +16,8 @@ $palettes: (
     'secondary':           #0fa2d0
   ),
   ui: (
-    'black':           #191919,
-    'white':           #FFF,
-    'gray':            #535353,
-    'light':           #FCFCFC,
+    'dark':            #191919,
+    'light':           #FFF
   ),
   vendor: (
     'facebook':        #3B5998,
@@ -35,4 +33,28 @@ $palettes: (
 /// Function to parse color palettes
 @function palette($palette, $tone: 'brand') {
   @return map-get(map-get($palettes, $palette), $tone);
+}
+
+/// Generating color and background Classes
+/// from color map
+$color-theme-list: (
+ primary: brand,
+ secondary: brand,
+ iron: brand,
+ dark: ui,
+ light: ui
+) !default;
+
+@mixin color-theme($color, $section) {
+  .color-#{$color} {
+    color: palette($section, #{$color});
+  }
+
+  .background-#{$color} {
+    background-color: palette($section, #{$color});
+  }
+}
+
+@each $key, $value in $color-theme-list {
+  @include color-theme($key, $value);
 }

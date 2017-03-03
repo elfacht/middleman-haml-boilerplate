@@ -35,13 +35,16 @@
 # Localization (i18n) - 'de' as default
 activate :i18n, :mount_at_root => :de
 
+# Fragment caching
+activate :middleman_fragment_caching
 
 # Automatic image dimensions on image_tag helper
 activate :automatic_image_sizes
 
 # Reload the browser automatically whenever files change
 configure :development do
-  activate :livereload
+  activate :livereload, :host => "localhost",
+         :livereload_css_target => nil
 end
 
 # Defines blog settings
@@ -88,6 +91,19 @@ helpers do
       site_title + title_separator + title
     else
       title + title_separator + site_title
+    end
+  end
+
+  # SVG helper
+  def svg(name)
+    root = Middleman::Application.root
+    file_path = "#{root}/source/assets/svg/#{name}.svg"
+    # return File.read(file_path) if File.exists?(file_path)
+    # '(not found)'
+    if File.exists?(file_path)
+      fragment_cache { File.read(file_path) }
+    else
+      '(not found)'
     end
   end
 
@@ -143,6 +159,9 @@ activate :autoprefixer do |config|
   config.inline   = true
   config.ignore   = ['hacks.css']
 end
+
+# Bower includes
+activate :bower
 
 # Build-specific configuration
 configure :build do

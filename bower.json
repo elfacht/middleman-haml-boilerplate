@@ -1,8 +1,9 @@
 {
   "name": "your-project",
   "version": "0.1.0",
+  "private": true,
   "dependencies": {},
   "devDependencies": {
-    "foundation-sites": "^6.2.2"
+    "foundation-sites": "^6.3.0"
   }
 }
