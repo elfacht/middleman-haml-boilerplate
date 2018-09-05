@@ -5,7 +5,6 @@ source 'https://rubygems.org'
 gem "middleman"
 gem 'builder', '~> 2.0'
 gem "middleman-blog"
-gem 'builder', '~> 2.0'
 gem 'middleman-minify-html'
 gem 'middleman-autoprefixer'
 gem 'middleman-inliner'
