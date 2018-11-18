@@ -1,7 +1,7 @@
 language: ruby
 
 rvm:
-  - 2.1.2
+  - 2.3.3p222
 
 bundler_args: --jobs=3 --retry=3
 
