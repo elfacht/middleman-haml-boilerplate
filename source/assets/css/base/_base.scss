@@ -28,14 +28,14 @@ body {
     display: none;
 
     //--- medium
-    @include breakpoint(medium) {
-      content: 'medium';
-    }
-
-    //--- large
-    @include breakpoint(large) {
-      content: 'large';
-    }
+    // @include breakpoint(medium) {
+    //   content: 'medium';
+    // }
+    //
+    // //--- large
+    // @include breakpoint(large) {
+    //   content: 'large';
+    // }
   }
 
   &.disable-hover {
