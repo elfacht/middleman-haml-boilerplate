@@ -62,7 +62,7 @@ GEM
       image_optim (~> 0.19)
     image_size (1.5.0)
     in_threads (1.5.0)
-    json (2.1.0)
+    json (2.3.1)
     kramdown (1.17.0)
     libv8 (3.16.14.19)
     listen (3.0.8)
